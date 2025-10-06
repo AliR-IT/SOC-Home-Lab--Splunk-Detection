@@ -39,3 +39,71 @@ Find suspicious enumeration commands:
 index=endpoint {bdb8f82f-e70b-68df-0e0c-000000001000}
 | search CommandLine="*net user*" OR CommandLine="*net localgroup*" OR CommandLine="*ipconfig*"
 | table _time,ParentImage,Image,CommandLine
+```
+## 🖼️ Screenshots
+
+Below are selected screenshots highlighting each stage of the lab setup, attack simulation, and log detection process.
+
+---
+
+### 1️⃣ Lab Environment Setup
+<p align="center">
+  <img src="Screenshots/lab_environment.png" alt="VirtualBox environment with Kali and Windows VMs" width="800"/>
+</p>
+<p align="center"><em>Figure 1: VirtualBox lab setup with two virtual machines — Kali Linux (attacker) and Windows 10 (victim).</em></p>
+
+---
+
+### 2️⃣ Sysmon Installation
+<p align="center">
+  <img src="Screenshots/sysmon_download.png" alt="Sysmon download page" width="800"/>
+</p>
+<p align="center"><em>Figure 2: Sysmon official download page used to install the tool on the Windows victim machine.</em></p>
+
+---
+
+### 3️⃣ Sysmon Configuration
+<p align="center">
+  <img src="Screenshots/sysmon_config.png" alt="Sysmon configuration file from GitHub" width="800"/>
+</p>
+<p align="center"><em>Figure 3: Sysmon configuration file obtained from GitHub to generate detailed process and network telemetry.</em></p>
+
+---
+
+### 4️⃣ Sysmon Integration with Splunk
+<p align="center">
+  <img src="Screenshots/splunk_sysmon_addon.png" alt="Splunk Sysmon add-on" width="800"/>
+</p>
+<p align="center"><em>Figure 4: Sysmon logs successfully integrated into Splunk via the Sysmon TA add-on.</em></p>
+
+---
+
+### 5️⃣ Attack Simulation via Metasploit
+<p align="center">
+  <img src="Screenshots/msf_console.png" alt="MSF console setup" width="800"/>
+</p>
+<p align="center"><em>Figure 5: Metasploit multi-handler listening for incoming connections after payload creation and delivery.</em></p>
+
+---
+
+### 6️⃣ Attacker Shell and Enumeration
+<p align="center">
+  <img src="Screenshots/attacker_shell.png" alt="Attacker shell output" width="800"/>
+</p>
+<p align="center"><em>Figure 6: Meterpreter shell session on the Kali attacker machine executing enumeration commands (ipconfig, net user, net localgroup).</em></p>
+
+---
+
+### 7️⃣ Process Creation and Command-Line Evidence
+<p align="center">
+  <img src="Screenshots/process_event.png" alt="Process creation log evidence" width="800"/>
+</p>
+<p align="center"><em>Figure 7: Sysmon process creation events capturing executed commands from the compromised host.</em></p>
+
+---
+
+### 8️⃣ SIEM Detection and Query
+<p align="center">
+  <img src="Screenshots/splunk_detection.png" alt="Splunk detection query results" width="900"/>
+</p>
+<p align="center"><em>Figure 8: Splunk query showing detection of payload execution and associated command-line activity.</em></p>
