@@ -107,3 +107,14 @@ Below are selected screenshots highlighting each stage of the lab setup, attack 
   <img src="Screenshots/splunk_detection.png" alt="Splunk detection query results" width="900"/>
 </p>
 <p align="center"><em>Figure 8: Splunk query showing detection of payload execution and associated command-line activity.</em></p>
+
+---
+
+### 📘 Project Write-Up
+
+You can read the full project write-up and analysis on Medium:
+
+👉 [**Mini Lab Project: Splunk Detection**](https://medium.com/@AliR-IT/mini-lab-project-splunk-detection-a3befa116a75)
+
+This article includes screenshots, investigation details, and lessons learned from the SOC lab.
+
